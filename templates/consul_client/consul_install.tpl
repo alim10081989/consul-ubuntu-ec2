@@ -15,7 +15,7 @@ start_join = [ "${tpl_server_private_ip}" ]
 bind_addr = "$(hostname -i)"
 enable_local_script_checks = true
 disable_remote_exec = false
-node_name = "consul-client"
+node_name = "${tpl_client_node_name}"
 EOF
 
 ## Manage Permissions & Start Consul
