@@ -1,6 +1,6 @@
 variable "aws_region" { default = "ap-south-1" }
 variable "client_count" { default = 2 }
-variable "keypair" { default = "" }
+variable "keypair" { default = "AWS" }
 
 variable "client_name" {
   default = {

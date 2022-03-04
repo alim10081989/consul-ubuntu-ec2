@@ -19,7 +19,7 @@ data "template_file" "consul_server" {
 resource "aws_instance" "consul_client" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
-  key_name               = "AWS"
+  key_name               = var.keypair
   count                  = var.client_count
   vpc_security_group_ids = ["sg-0f9c3281b55a4d38f"]
 

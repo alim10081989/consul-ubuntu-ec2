@@ -20,6 +20,14 @@ server = true
 disable_remote_exec = false
 EOF
 
+cat << EOF > /etc/consul.d/agent.hcl
+acl = {
+  enabled = true
+  default_policy = "deny"
+  enable_token_persistence = true
+}
+EOF
+
 ## Manage Permissions & Start Consul
 sudo chown -R consul:consul /etc/consul.d
 sudo systemctl start consul
